@@ -2,9 +2,9 @@
 
 namespace js4php5\compiler\parser;
 
-use hiltonjanfield\js4php5\compiler\jsly;
-use hiltonjanfield\js4php5\jsc\js_program;
-use hiltonjanfield\js4php5\VarDumper;
+use js4php5\compiler\jsly;
+use js4php5\jsc\js_program;
+use js4php5\VarDumper;
 
 class EasyParser extends Parser
 {
@@ -27,7 +27,7 @@ class EasyParser extends Parser
 
     /**
      * @param string                                       $symbol
-     * @param \hiltonjanfield\js4php5\compiler\lexer\Lexer $lex
+     * @param \js4php5\compiler\lexer\Lexer $lex
      * @param null                                         $strategy
      *
      * @return js_program

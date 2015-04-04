@@ -2,8 +2,8 @@
 
 namespace js4php5\compiler\parser;
 
-use hiltonjanfield\js4php5\compiler\lexer\Lexer;
-use hiltonjanfield\js4php5\VarDumper;
+use js4php5\compiler\lexer\Lexer;
+use js4php5\VarDumper;
 
 //TODO: Fix known bug whre parser will get stuck on a script ending with a + (does not recognize bad syntax).
 //Can be tested with a script containing only '+'.

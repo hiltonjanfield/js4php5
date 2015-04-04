@@ -18,12 +18,12 @@ function __autoload($className)
     return false;
 }
 
-use hiltonjanfield\js4php5\compiler\jsly;
-use hiltonjanfield\js4php5\compiler\lexer\Lexer;
-use hiltonjanfield\js4php5\compiler\parser\EasyParser;
-use hiltonjanfield\js4php5\JS;
-use hiltonjanfield\js4php5\Timer;
-use hiltonjanfield\js4php5\VarDumper;
+use js4php5\compiler\jsly;
+use js4php5\compiler\lexer\Lexer;
+use js4php5\compiler\parser\EasyParser;
+use js4php5\JS;
+use js4php5\Timer;
+use js4php5\VarDumper;
 
 $javascript = <<<'JS'
 
@@ -58,7 +58,7 @@ $timer['Lexer'] = microtime(true);
 try {
     $program = $parser->parse('c_program', $lex);
     $timer['Parser'] = microtime(true);
-} catch (\hiltonjanfield\js4php5\compiler\parser\ParseException $e) {
+} catch (\js4php5\compiler\parser\ParseException $e) {
     VarDumper::dump($e, 'Exception');
     exit;
 }

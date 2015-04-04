@@ -4,11 +4,11 @@
 
 namespace js4php5;
 
-use hiltonjanfield\js4php5\compiler\Compiler;
-use hiltonjanfield\js4php5\runtime\jsAttribute;
-use hiltonjanfield\js4php5\runtime\Object;
-use hiltonjanfield\js4php5\runtime\Base;
-use hiltonjanfield\js4php5\runtime\Runtime;
+use js4php5\compiler\Compiler;
+use js4php5\runtime\jsAttribute;
+use js4php5\runtime\Object;
+use js4php5\runtime\Base;
+use js4php5\runtime\Runtime;
 
 /**
  * Class JS - Main API for JavaScript Compilation and Execution
@@ -309,8 +309,8 @@ class JS
 
 namespace $namespace;
 
-use \hiltonjanfield\js4php5\JS,
-    \hiltonjanfield\js4php5\Runtime\Runtime;
+use \js4php5\JS,
+    \js4php5\Runtime\Runtime;
 
 class $class {
     $php

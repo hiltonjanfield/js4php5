@@ -2,7 +2,7 @@
 
 namespace js4php5\compiler\parser;
 
-use hiltonjanfield\js4php5\compiler\parser\set;
+use js4php5\compiler\parser\set;
 
 class dfa
 {

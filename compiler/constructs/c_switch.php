@@ -2,7 +2,7 @@
 
 namespace js4php5\compiler\constructs;
 
-use hiltonjanfield\js4php5\compiler\Compiler;
+use js4php5\compiler\Compiler;
 
 class c_switch extends BaseConstruct
 {

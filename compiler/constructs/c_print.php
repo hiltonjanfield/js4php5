@@ -2,7 +2,7 @@
 
 namespace js4php5\compiler\constructs;
 
-use hiltonjanfield\js4php5\JS;
+use js4php5\JS;
 
 class c_print extends BaseConstruct
 {

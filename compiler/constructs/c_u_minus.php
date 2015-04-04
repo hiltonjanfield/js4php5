@@ -2,7 +2,7 @@
 
 namespace js4php5\compiler\constructs;
 
-use hiltonjanfield\js4php5\VarDumper;
+use js4php5\VarDumper;
 
 class c_u_minus extends BaseUnaryConstruct
 {

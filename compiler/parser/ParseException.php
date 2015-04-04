@@ -3,8 +3,8 @@
 namespace js4php5\compiler\parser;
 
 use Exception;
-use hiltonjanfield\js4php5\compiler\lexer\Point;
-use hiltonjanfield\js4php5\compiler\lexer\Token;
+use js4php5\compiler\lexer\Point;
+use js4php5\compiler\lexer\Token;
 
 class ParseException extends Exception
 {

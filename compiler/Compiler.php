@@ -10,8 +10,8 @@
 namespace js4php5\compiler;
 
 
-use hiltonjanfield\js4php5\compiler\lexer\Lexer;
-use hiltonjanfield\js4php5\compiler\parser\EasyParser;
+use js4php5\compiler\lexer\Lexer;
+use js4php5\compiler\parser\EasyParser;
 
 class Compiler {
 

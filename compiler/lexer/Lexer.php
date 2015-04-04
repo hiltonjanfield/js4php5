@@ -7,7 +7,7 @@
 
 namespace js4php5\compiler\lexer;
 
-use hiltonjanfield\js4php5\compiler\jsly;
+use js4php5\compiler\jsly;
 
 class Lexer
 {

@@ -3,7 +3,7 @@
 namespace js4php5\runtime;
 
 use Exception;
-use hiltonjanfield\js4php5\JS;
+use js4php5\JS;
 
 class jsFunction extends jsObject
 {
@@ -174,16 +174,16 @@ class jsFunction extends jsObject
                 );
             }
                 if ($this->phpname[0] == 'Runtime') {
-                $this->phpname[0] = 'hiltonjanfield\js4php5\runtime\Runtime';
+                $this->phpname[0] = 'js4php5\runtime\Runtime';
             }
             if ($this->phpname[0] == 'jsObject') {
-                $this->phpname[0] = 'hiltonjanfield\js4php5\runtime\jsObject';
+                $this->phpname[0] = 'js4php5\runtime\jsObject';
             }
             if ($this->phpname[0] == 'jsMath') {
-                $this->phpname[0] = 'hiltonjanfield\js4php5\runtime\jsMath';
+                $this->phpname[0] = 'js4php5\runtime\jsMath';
             }
             if ($this->phpname[0] == 'jsString') {
-                $this->phpname[0] = 'hiltonjanfield\js4php5\runtime\jsString';
+                $this->phpname[0] = 'js4php5\runtime\jsString';
             }
 
             $v = call_user_func_array($this->phpname, $args);

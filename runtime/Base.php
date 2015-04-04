@@ -2,7 +2,7 @@
 
 namespace js4php5\runtime;
 
-use hiltonjanfield\js4php5\VarDumper;
+use js4php5\VarDumper;
 
 class Base
 {

@@ -2,8 +2,8 @@
 
 namespace js4php5\compiler\parser;
 
-use hiltonjanfield\js4php5\compiler\lexer\Lexer;
-use hiltonjanfield\js4php5\compiler\lexer\Token;
+use js4php5\compiler\lexer\Lexer;
+use js4php5\compiler\lexer\Token;
 
 class DefaultParserStrategy extends ParserStrategy
 {

@@ -2,7 +2,7 @@
 
 namespace js4php5\compiler\constructs;
 
-use hiltonjanfield\js4php5\runtime\jsFunction;
+use js4php5\runtime\jsFunction;
 
 class c_source extends BaseConstruct
 {

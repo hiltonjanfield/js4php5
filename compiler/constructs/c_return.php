@@ -2,9 +2,9 @@
 
 namespace js4php5\compiler\constructs;
 
-use hiltonjanfield\js4php5\jsc\js_exception;
-use hiltonjanfield\js4php5\jsc\js_syntaxerror;
-use hiltonjanfield\js4php5\runtime\Base;
+use js4php5\jsc\js_exception;
+use js4php5\jsc\js_syntaxerror;
+use js4php5\runtime\Base;
 
 class c_return extends BaseConstruct
 {

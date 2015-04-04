@@ -2,8 +2,8 @@
 
 namespace js4php5\compiler\constructs;
 
-use hiltonjanfield\js4php5\JS;
-use hiltonjanfield\js4php5\VarDumper;
+use js4php5\JS;
+use js4php5\VarDumper;
 
 abstract class BaseUnaryConstruct extends BaseConstruct
 {
