@@ -100,7 +100,7 @@ class jsArray extends jsObject
     {
         $v = $this->length->value;
         $this->put($v, $val);
-        //$this->length = Runtime::js_int($v+1);
+        $this->length = Runtime::js_int($v + 1);
     }
 
     static public function join($sep)

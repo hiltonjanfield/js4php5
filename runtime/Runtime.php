@@ -461,8 +461,19 @@ class Runtime
         Runtime::$idcache = array();
     }
 
-    /* resolve an identifier into a jsRef object */
 
+    /**
+     * Resolve an identifier into a jsRef object.
+     *
+     * @param $method
+     * @param $args
+     *
+     * @return mixed
+     *
+     * @throws \Exception
+     * @throws jsException
+     * @throws null
+     */
     static function call($method, $args)
     {
         // not fully compliant with 11.2.3 XXX

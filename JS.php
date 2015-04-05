@@ -6,7 +6,6 @@ namespace js4php5;
 
 use js4php5\compiler\Compiler;
 use js4php5\runtime\jsAttribute;
-use js4php5\runtime\Object;
 use js4php5\runtime\Base;
 use js4php5\runtime\Runtime;
 
@@ -132,27 +131,54 @@ class JS
 
         // Set variables.
         foreach ((array)$variables as $js => $php) {
-            switch (true) {
-                case is_bool($php):
-                    $v = new Base(Base::BOOLEAN, $php);
-                    break;
-                case is_string($php):
-                    $v = Runtime::js_str($php);
-                    break;
-                case is_numeric($php):
-                    $v = Runtime::js_int($php);
-                    break;
-                case is_null($php):
-                    $v = Runtime::$null;
-                    break;
-                case is_array($php):
-                    //TODO: Implement arrays/objects in JS::defineObject().
-                default:
-                    $v = Runtime::$undefined;
-                    break;
-            }
-            $obj->put($js, $v);
+            $obj->put($js, static::convertVariable($php));
         }
+    }
+
+    /**
+     * Convert PHP values to engine object-values.
+     * Used in callFunction() and defineObject().
+     *
+     * @param $phpValue
+     *
+     * @return Base
+     */
+    private static function convertVariable($phpValue)
+    {
+        switch (true) {
+            case is_bool($phpValue):
+                return new Base(Base::BOOLEAN, $phpValue);
+            case is_string($phpValue):
+                return Runtime::js_str($phpValue);
+            case is_numeric($phpValue):
+                return Runtime::js_int($phpValue);
+            case is_null($phpValue):
+                return Runtime::$null;
+            case is_array($phpValue):
+                //TODO: Implement arrays/objects in JS::defineObject().
+            default:
+                return Runtime::$undefined;
+        }
+    }
+
+    /**
+     * Call a defined Javascript function by name.
+     *
+     * @param       $name
+     * @param array $parameters
+     *
+     * @return mixed
+     * @throws runtime\jsException
+     */
+    public static function callFunction($name, array $parameters)
+    {
+        $params = [];
+        foreach ($parameters as $p) {
+            $params[] = static::convertVariable($p);
+        }
+        $result = Runtime::call(Runtime::id($name), $params);
+
+        return static::convertReturnValue($result);
     }
 
     /**
@@ -315,6 +341,12 @@ use \js4php5\JS,
 class $class {
     $php
 }
+
+__halt_compiler();
+
+//Original JavaScript Source:
+
+$script
 PHP;
         // No closing PHP tag as per PSR-2
     }
