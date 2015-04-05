@@ -197,6 +197,7 @@ class jsFunction extends jsObject
         if ($thrown != null) {
             throw $thrown;
         }
+        //TODO: PHP5ize: Change the above lines to a try..catch..finally block.
         return $v ? $v : Runtime::$undefined;
     }
 

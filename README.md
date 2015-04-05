@@ -46,15 +46,21 @@ JS::getCurrentScriptFQCN()
 Returns the Fully Qualified Class Name of the last run script.
 Once a script has been run, the class remains in memory until the end of the session.
 
-`$myscript = JS::getCurrentScriptFQCN();` will grab the script reference so you can run it again at any time using `$myscript::run();`.
-However, there is very little overhead simply using JS::run('', 'myScriptID'); after the first call.
+`$myscript = JS::getCurrentScriptFQCN();` will grab the script reference so you can run it again at any time using `$myscript::run();`. However, there is very little overhead simply using JS::run('', 'myScriptID'); after the first call.
 
-For those thinking about using js4php5 to run small scripts repeatedly, as is our main use case in StarsNT: Testing shows that every time the object is called, it gets faster. Significantly faster after the first (loading and/or compiling) call, obviously, but continued speed increases occur on stock PHP installs (no code caching system). Tests on the dev machine have results along the lines of `[250ms, 40ms, 25ms, 18ms, 9ms]` when a small script is called five times.
+For those thinking about using js4php5 to run small scripts/functions repeatedly, as is our main use case in StarsNT: Testing shows that every time the object is called, it gets faster. Significantly faster after the first (loading and/or compiling) call, obviously, but continued speed increases occur on stock PHP installs (no code caching system). Tests on the dev machine have results along the lines of `[250ms, 40ms, 25ms, 18ms, 9ms]` when a small script is called five times.
+
+```
+JS::callFunction($name, array $parameters = [])
+```
+Function which calls a Javascript function from a loaded script. **Use with caution; only works on functions defined in the most recently loaded script!**
+`$myscript::callFunction('myfunctionname', [17, 'parameters', 'here']);`.
 
 ```
 JS::convertReturnValue($value)
 ```
 If you are calling a script manually as noted above (`$myscript::run()`) and need the return value of the script, you can use this function to convert it to a usable PHP value (`$result = JS::convertReturnValue($myscript::run());`).
+This function is automatically called by JS::run() and Runtime::callFunction() before a value is returned.
 
 Parameters:
 
