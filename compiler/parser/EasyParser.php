@@ -34,7 +34,7 @@ class EasyParser extends Parser
      *
      * @throws parse_error
      */
-    function parse($symbol, $lex, $strategy = null)
+    public function parse($symbol, Lexer $lex, ParserStrategy $strategy = null)
     {
         return parent::parse($symbol, $lex, $this->strategy);
     }
