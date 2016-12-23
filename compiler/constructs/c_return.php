@@ -23,7 +23,7 @@ class c_return extends BaseConstruct
 //            return "return " . $this->expr->emit(true) . ";\n";
 //        }
         if ($this->expr == ';') {
-            return 'return Runtime::$undefined;\n';
+            return "return Runtime::\$undefined;\n";
         } else {
             return "return " . $this->expr->emit(true) . ";\n";
         }
